@@ -1,6 +1,6 @@
 set :application, 'textbook'
 set :repo_url, "git@github.com:sleepinglion/simple_manage_program.git"
-#set :branch, 'master'
+set :branch, 'master'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

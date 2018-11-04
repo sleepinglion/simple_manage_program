@@ -45,7 +45,7 @@ try {
 
              
 
-    $stmt_select=$pdo->prepare('SELECT cd.*,date(cd.reg_time) as reg_time FROM requests as cd ORDER BY id DESC LIMIT '.$from.' , '.$perPage);
+    $stmt_select=$pdo->prepare('SELECT cd.*,date(cd.created_at) as created_at FROM requests as cd ORDER BY id DESC LIMIT '.$from.' , '.$perPage);
     $stmt_select->execute();
     $list=$stmt_select->fetchAll(PDO::FETCH_ASSOC);
 
