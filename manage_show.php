@@ -72,21 +72,27 @@ try {
                 <table class="table table-striped table-hover">
                     <thead class="thead-default">
                         <tr>
+                            <th>지역명</th>
                             <th>학교명</th>
+                            <th>학생수</th>
                             <th>주소</th>
                             <th>담당자</th>
                             <th>전화번호</th>
                             <th>수거요청일</th>
+                            <th>등록일</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach($list as $value): ?>
                         <tr>
+                            <td><?php echo $value['area_name'] ?></td>
                             <td><?php echo $value['school_name'] ?></td>
+                            <td><?php echo $value['student'] ?></td>
                             <td><?php echo $value['address'] ?></td>                        
                             <td><?php echo $value['manager'] ?></td>
                             <td><?php echo $value['phone'] ?></td>
-                            <td><?php echo $value['date'] ?></td>                                                                   
+                            <td><?php echo $value['date'] ?></td>
+                            <td><?php echo $value['created_at'] ?></td>                                                                       
                         </tr>                    
                         <?php endforeach ?>
                     </tbody>
