@@ -18,15 +18,15 @@ try {
     }
     
     if(!empty($school_name) and !empty($manager) and !empty($phone)) {
-        $stmt_select=$pdo->prepare('SELECT count(*) FROM requests WHERE school_name=:school_name AND manager=:manager AND phone=:phone');
-        $stmt_select->bindParam(':school_name',$school_name,PDO::PARAM_STR);
-        $stmt_select->bindParam(':manager',$manager,PDO::PARAM_STR); 
-        $stmt_select->bindParam(':phone',$phone,PDO::PARAM_STR);         
-        $stmt_select->execute();
-        $count=$stmt_select->fetchColumn();
+        $stmt_select_count=$pdo->prepare('SELECT count(*) FROM requests WHERE school_name LIKE concat("%",:school_name,"%") AND manager LIKE concat("%",:manager,"%") AND phone LIKE concat("%",:phone,"%")');
+        $stmt_select_count->bindParam(':school_name',$school_name,PDO::PARAM_STR);
+        $stmt_select_count->bindParam(':manager',$manager,PDO::PARAM_STR); 
+        $stmt_select_count->bindParam(':phone',$phone,PDO::PARAM_STR);         
+        $stmt_select_count->execute();
+        $count=$stmt_select_count->fetchColumn();
         
         if($count) {
-            $stmt_select=$pdo->prepare('SELECT id FROM requests WHERE school_name=:school_name AND manager=:manager AND phone=:phone');
+            $stmt_select=$pdo->prepare('SELECT id FROM requests WHERE school_name LIKE concat("%",:school_name,"%") AND manager LIKE concat("%",:manager,"%") AND phone LIKE concat("%",:phone,"%")');
             $stmt_select->bindParam(':school_name',$school_name,PDO::PARAM_STR);
             $stmt_select->bindParam(':manager',$manager,PDO::PARAM_STR); 
             $stmt_select->bindParam(':phone',$phone,PDO::PARAM_STR);         
@@ -64,8 +64,8 @@ try {
                         <input id="school_name" name="school_name" class="form-control form-control-lg"<?php if(!empty($school_name)): ?> value="<?php echo $school_name ?>"<?php endif ?>>
                     </div>                
                     <div class="form-group">
-                        <label for="manager">이름</label>
-                        <input id="manager" name="manager" class="form-control form-control-lg"<?php if(!empty($name)): ?> value="<?php echo $name ?>"<?php endif ?>>
+                        <label for="manager">담당자</label>
+                        <input id="manager" name="manager" class="form-control form-control-lg"<?php if(!empty($manager)): ?> value="<?php echo $manager ?>"<?php endif ?>>
                     </div>
                     <div class="form-group">
                         <label for="phone">전화번호</label>
@@ -82,7 +82,8 @@ try {
 </html>
 <?php 
 } catch (Exception $e) {
-	 echo $e->getMessage();
+    echo $e->getLine();
+	echo $e->getMessage();
 }
 
 ?>

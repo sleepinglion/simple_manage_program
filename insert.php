@@ -15,7 +15,7 @@ try {
     $desired_date=$dateObj->format('Y-m-d');
 	$current_time=date("Y-m-d H:i:s");
    
-    $stmt_insert=$pdo->prepare('INSERT INTO requests(area_name,school_name,student,address,manager,phone,email,date,vehicle,comments,reg_time) VALUES(:area_name,:school_name,:student,:address,:manager,:phone,:email,:date,:vehicle,:comments,:reg_time)');
+    $stmt_insert=$pdo->prepare('INSERT INTO requests(area_name,school_name,student,address,manager,phone,email,date,vehicle,comment,created_at,updated_at) VALUES(:area_name,:school_name,:student,:address,:manager,:phone,:email,:date,:vehicle,:comment,:created_at,:updated_at)');
 	$stmt_insert->bindParam(':area_name',$_POST['area_name'],PDO::PARAM_STR);
 	$stmt_insert->bindParam(':school_name',$_POST['school_name'],PDO::PARAM_STR);
 	$stmt_insert->bindParam(':student',$student,PDO::PARAM_INT);
@@ -25,8 +25,9 @@ try {
 	$stmt_insert->bindParam(':email',$_POST['email'],PDO::PARAM_STR);
     $stmt_insert->bindParam(':date',$desired_date,PDO::PARAM_STR);
 	$stmt_insert->bindParam(':vehicle',$_POST['vehicle'],PDO::PARAM_STR);
-	$stmt_insert->bindParam(':comments',$_POST['comments'],PDO::PARAM_STR);
-	$stmt_insert->bindParam(':reg_time',$current_time,PDO::PARAM_STR);
+	$stmt_insert->bindParam(':comment',$_POST['comment'],PDO::PARAM_STR);
+    $stmt_insert->bindParam(':created_at',$current_time,PDO::PARAM_STR);
+	$stmt_insert->bindParam(':updated_at',$current_time,PDO::PARAM_STR);    
     $stmt_insert->execute();
 
 
@@ -59,7 +60,7 @@ try {
        !isset($_POST['email']) ||
 	   !isset($_POST['desired_date']) ||
        !isset($_POST['vehicle']) ||
-       !isset($_POST['comments']) ||
+       !isset($_POST['comment']) ||
        !isset($_POST['agree'])) {
         died('We are sorry, but there appears to be a problem with the form you submitted.');       
     }
@@ -73,7 +74,7 @@ try {
 	$email_from = $_POST['email']; // required
     $desired_date = $_POST['desired_date']; // required
     $vehicle = $_POST['vehicle']; // required
-    $comments = $_POST['comments']; // not required
+    $comment = $_POST['comment']; // not required
 	$agree = $_POST['agree']; // required
 	 
     $error_message = "";
@@ -104,7 +105,7 @@ try {
 	$email_message .= "이메일 : ".clean_string($email_from)."\n\n";
     $email_message .= "수거희망날짜 : ".clean_string($desired_date)."\n\n";
     $email_message .= "차량진입가능여부 : ".clean_string($vehicle)."\n\n";
-	$email_message .= "기타주문사항 : ".clean_string($comments)."\n\n";
+	$email_message .= "기타주문사항 : ".clean_string($comment)."\n\n";
     $email_message .= "개인정보활용동의 : ".clean_string($agree)."\n\n";
 	
 	

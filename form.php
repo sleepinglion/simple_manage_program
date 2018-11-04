@@ -9,33 +9,33 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
-<form name="contactform" method="post" action="insert.php">
+<form name="contactform" method="post" action="<?php if(empty($content)): ?>insert.php<?php else: ?>update.php<?php endif ?>">
 	<div class="textbook_section">
-		<h1>폐교과서 수거를 신청합니다</h1>
+		<h1>폐교과서 수거를 신청<?php if(!empty($content)): ?>을 수정<?php endif ?>합니다</h1>
 		<ul>
 			<li>
 				<label for="area_name">1. 지역명</label>
-				<input type="text" name="area_name" id="area_name" size="30" maxlength="50" required="required"  placeholder="예시 : 경기도 의정부" >
+				<input type="text" name="area_name" id="area_name" size="30" maxlength="50" required="required"  placeholder="예시 : 경기도 의정부"<?php if(!empty($content)): ?> value="<?php echo $content['area_name'] ?>"<?php endif ?>>
 			</li>
 			<li>
 				<label for="school_name">2. 학교명 / 기관명</label>
-				<input type="text" name="school_name" id="school_name" size="30" maxlength="50" required="required"  placeholder="예시 : 경기마을교육공동체사회적협동조합" >
+				<input type="text" name="school_name" id="school_name" size="30" maxlength="50" required="required"  placeholder="예시 : 경기마을교육공동체사회적협동조합"<?php if(!empty($content)): ?> value="<?php echo $content['school_name'] ?>"<?php endif ?>>
 			</li>
 			<li>
 				<label for="manager">3. 전체 학생수/ 명 (학교가 아닌 기관은 생략)</label>
-				<input type="number" name="student" id="student" min="0" step="1" placeholder="예시 : 500" >
+				<input type="number" name="student" id="student" min="0" step="1" placeholder="예시 : 500" <?php if(!empty($content)): ?> value="<?php echo $content['student'] ?>"<?php endif ?>>
 			</li>
 			<li>
 				<label for="manager">4. 주소</label>
-				<input type="text" name="address" id="address" size="30" maxlength="50" required="required" placeholder="예시 : 경기도 의정부시 호국로 1287" >
+				<input type="text" name="address" id="address" size="30" maxlength="50" required="required" placeholder="예시 : 경기도 의정부시 호국로 1287"<?php if(!empty($content)): ?> value="<?php echo $content['address'] ?>"<?php endif ?>>
 			</li>
 			<li>
 				<label for="manager">5. 담당자 성함/근무부서</label>
-				<input type="text" name="manager" id="manager" size="30" maxlength="50" required="required" placeholder="예시 : 김몽실/행정실" >
+				<input type="text" name="manager" id="manager" size="30" maxlength="50" required="required" placeholder="예시 : 김몽실/행정실"<?php if(!empty($content)): ?> value="<?php echo $content['manager'] ?>"<?php endif ?>>
 			</li>
 			<li>
 				<label for="phone">6. 담당자 연락처(교무실/행정실/휴대폰)</label>
-				<input type="text" name="phone" id="phone" size="30" maxlength="50" required="required" placeholder="예시 : 031-123-1234 / 031-123-1234 / 010-123-1234" >
+				<input type="text" name="phone" id="phone" size="30" maxlength="50" required="required" placeholder="예시 : 031-123-1234 / 031-123-1234 / 010-123-1234"<?php if(!empty($content)): ?> value="<?php echo $content['phone'] ?>"<?php endif ?>>
 				<!--<span class="phonetype">사무실 :</span>
 					<input type="text" name="phone1" id="phone1" size="30" maxlength="50" style="width:91%; margin-bottom:5px;" required="required" placeholder="예시 : 031-847-7100" >
 					<br>
@@ -47,23 +47,24 @@
 			</li>
 			<li>
 				<label for="desired_date">7. 수거 희망 날짜 (하루 30건으로 제한 합니다. 30건이 초과되면 접수가 되지 않으므로 다른 날짜로 선택해주세요.)</label>
-				<input type="text" name="desired_date" id="datepicker" value="" required="required" placeholder="2018년 7월 25일">
+				<input type="text" name="desired_date" id="datepicker" required="required" placeholder="2018년 7월 25일"<?php if(!empty($content)): ?> value="<?php echo $content['date'] ?>"<?php endif ?>>
 			</li>
 			<li>
 				<label for="vehicle">8. 차량진입 가능여부</label>
 				<div class="vehicle-wrap">
-					<input type="radio" name="vehicle" id="vehicle0" value="1톤" required="required" checked>
-					<label for="agree0" class="vehicle-choice" style="margin-right:20px;">1톤</label>
-					<input type="radio" name="vehicle" id="vehicle1" value="3.5톤" required="required">
-					<label for="agree1" class="vehicle-choice" style="margin-right:20px;">3.5톤</label>
-					<input type="radio" name="vehicle" id="vehicle2" value="5톤" required="required">
-					<label for="agree1" class="vehicle-choice">5톤 집게 <span style="display: inline-block;font-weight: 300">(25인승 버스 크기와 비슷)</span></label>
+					<input type="radio" name="vehicle" id="vehicle0" value="1톤"<?php if(!empty($content)): ?><?php if($content['vehicle']=='1톤'): ?> checked<?php endif ?><?php else: ?> checked<?php endif ?>>
+					<label for="vehicle0" class="vehicle-choice" style="margin-right:20px;">1톤</label>
+					<input type="radio" name="vehicle" id="vehicle1" value="3.5톤"<?php if(!empty($content)): ?><?php if($content['vehicle']=='3.5톤'): ?> checked<?php endif ?><?php endif ?>>
+					<label for="vehicle1" class="vehicle-choice" style="margin-right:20px;">3.5톤</label>
+					<input type="radio" name="vehicle" id="vehicle2" value="5톤"<?php if(!empty($content)): ?><?php if($content['vehicle']=='5톤'): ?> checked<?php endif ?><?php endif ?>>
+					<label for="vehicle2" class="vehicle-choice">5톤 집게 <span style="display: inline-block;font-weight: 300">(25인승 버스 크기와 비슷)</span></label>
 				</div>
-			</li>
+            </li>
 			<li>
-				<label for="comments">9. 기타 주문 사항 <font color=red>(마대자루 신청시 사전에 연락드리고 발송합니다.)</font></label>
-				<textarea name="comments" id="comments"  cols="50" rows="5" placeholder=""></textarea>
-			</li>
+				<label for="comment">9. 기타 주문 사항 <font color=red>(마대자루 신청시 사전에 연락드리고 발송합니다.)</font></label>
+				<textarea name="comment" id="comment"  cols="50" rows="5" placeholder=""><?php if(!empty($content)): ?><?php echo $content['comment'] ?><?php endif ?></textarea>
+            </li>
+			<?php if(empty($content)): ?>            
 			<li> <label>* 개인 정보 활용 동의 <span style="font-size:12px; margin-top:5px; color:#888;">(업무연락 외 개인 정보를 사용하지 않습니다. <font color=red> 개인 정보 활용 동의</font>는 <font color=red><strong>예</strong></font>로 선택하셔야 접수가능합니다.)</span>
 				</label>
 				<div class="agree-wrap">
@@ -73,7 +74,6 @@
 					<label for="agree1" class="radio-agree">아니오</label>
 				</div>
 			</li>
-			<?php if(empty($_SESSION['id'])): ?>
 			<input type="submit" id="submit_button" value="입력하기" disabled class="btn_submit">
 			<?php else: ?>
 			<input type="submit" id="submit_button" value="수정하기" disabled class="btn_submit">
