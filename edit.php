@@ -5,8 +5,14 @@ try {
 
     require 'config/database.php';
 
-	if(!empty($_SESSION['id'])) {
-        
+	if(empty($_SESSION['id'])) {
+?>
+        <script>
+        alert ("먼저 해당되는 정보를 입력해주세요");
+        location.href='search.php';
+        </script>        
+<?php
+        exit;
     }
 
 	$stmt_select=$pdo->prepare('SELECT `date` FROM requests GROUP BY `date` HAVING count(*)>=30');
@@ -18,7 +24,7 @@ try {
     $stmt_select_content->execute();
     $content=$stmt_select_content->fetch(PDO::FETCH_ASSOC);
     
-	include 'form.php';
+    include 'form.php';  
 } catch (Exception $e) {
 	 echo $e->getMessage();
 }

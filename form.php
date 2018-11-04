@@ -76,7 +76,7 @@
 			</li>
 			<input type="submit" id="submit_button" value="입력하기" disabled class="btn_submit">
 			<?php else: ?>
-			<input type="submit" id="submit_button" value="수정하기" disabled class="btn_submit">
+			<input type="submit" id="submit_button" value="수정하기" class="btn_submit">
 			<?php endif ?>
 		</ul>
 	</div>
@@ -178,7 +178,7 @@ return [$return,$returnclass];
         });
       }
 });
-    
+<?php if(empty($content)): ?>
   $(function() {
     $( "input[name=agree]" ).click(function(){
 		if($(this).val() == "아니오"){
@@ -193,6 +193,7 @@ return [$return,$returnclass];
 	})
 	
   });
+<?php endif ?>
   </script>
 </body>
 </html>
