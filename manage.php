@@ -18,10 +18,10 @@ try {
         }
     }
 
-    include 'database.php';
+    require 'config/database.php';
     require ('Pager/Pager.php');
 
-    $stmt_select=$pdo->prepare('SELECT count(*) FROM check_date');
+    $stmt_select=$pdo->prepare('SELECT count(*) FROM requests');
     $stmt_select->execute();
     $total=$stmt_select->fetchColumn();
 
@@ -45,7 +45,7 @@ try {
 
              
 
-    $stmt_select=$pdo->prepare('SELECT cd.*,date(cd.reg_time) as reg_time FROM check_date as cd LIMIT '.$from.' , '.$perPage);
+    $stmt_select=$pdo->prepare('SELECT cd.*,date(cd.reg_time) as reg_time FROM requests as cd LIMIT '.$from.' , '.$perPage);
     $stmt_select->execute();
     $list=$stmt_select->fetchAll(PDO::FETCH_ASSOC);
 

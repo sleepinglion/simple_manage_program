@@ -3,7 +3,7 @@
 try {
     session_start();
 
-    require 'database.php';
+    require 'config/database.php';
 
     if(isset($_GET['school_name'])) {
         $school_name=filter_var($_GET['school_name'],FILTER_SANITIZE_STRING);

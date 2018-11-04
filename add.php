@@ -3,14 +3,14 @@
 try {
 	session_start();
 
-	require 'database.php';
+    require 'config/database.php';
 
-	$stmt_select=$pdo->prepare('SELECT `date` FROM check_date GROUP BY `date` HAVING count(*)>=30');
+	$stmt_select=$pdo->prepare('SELECT `date` FROM requests GROUP BY `date` HAVING count(*)>=30');
     $stmt_select->execute();
 	$list=$stmt_select->fetchAll(PDO::FETCH_ASSOC);
 
 	if(!empty($_SESSION['id'])) {
-		$stmt_select=$pdo->prepare('SELECT * FROM check_date WHERE id=:id');
+		$stmt_select=$pdo->prepare('SELECT * FROM requests WHERE id=:id');
 		$stmt_select->bindParam(':id',$phone,PDO::PARAM_INT);         
 		$stmt_select->execute();
 		$id=$stmt_select->fetch(PDO::FETCH_ASSOC);
@@ -41,8 +41,8 @@ try {
 				<input type="text" name="school_name" id="school_name" size="30" maxlength="50" required="required"  placeholder="예시 : 경기마을교육공동체사회적협동조합" >
 			</li>
 			<li>
-				<label for="manager">3. 전체 학생수 (학교가 아닌 기관은 생략)</label>
-				<input type="text" name="student" id="student" size="30" maxlength="50" placeholder="예시 : 500명" >
+				<label for="manager">3. 전체 학생수/ 명 (학교가 아닌 기관은 생략)</label>
+				<input type="number" name="student" id="student" min="0" step="1" placeholder="예시 : 500" >
 			</li>
 			<li>
 				<label for="manager">4. 주소</label>
