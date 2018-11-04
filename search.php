@@ -18,7 +18,7 @@ try {
     }
     
     if(!empty($school_name) and !empty($manager) and !empty($phone)) {
-        $stmt_select=$pdo->prepare('SELECT count(*) FROM check_date WHERE school_name=:school_name AND manager=:manager AND phone=:phone');
+        $stmt_select=$pdo->prepare('SELECT count(*) FROM requests WHERE school_name=:school_name AND manager=:manager AND phone=:phone');
         $stmt_select->bindParam(':school_name',$school_name,PDO::PARAM_STR);
         $stmt_select->bindParam(':manager',$manager,PDO::PARAM_STR); 
         $stmt_select->bindParam(':phone',$phone,PDO::PARAM_STR);         
@@ -26,7 +26,7 @@ try {
         $count=$stmt_select->fetchColumn();
         
         if($count) {
-            $stmt_select=$pdo->prepare('SELECT id FROM check_date WHERE school_name=:school_name AND manager=:manager AND phone=:phone');
+            $stmt_select=$pdo->prepare('SELECT id FROM requests WHERE school_name=:school_name AND manager=:manager AND phone=:phone');
             $stmt_select->bindParam(':school_name',$school_name,PDO::PARAM_STR);
             $stmt_select->bindParam(':manager',$manager,PDO::PARAM_STR); 
             $stmt_select->bindParam(':phone',$phone,PDO::PARAM_STR);         
@@ -34,7 +34,7 @@ try {
             $id=$stmt_select->fetchColumn();
 
             $_SESSION['id']=$id;
-            header('Location: add.php');
+            header('Location: edit.php');
             exit;
         }
     }

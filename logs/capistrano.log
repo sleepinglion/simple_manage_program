@@ -275,3 +275,112 @@ remote: Compressing objects:  11% (1/9)   [Kremote: Compressing objects:  22% 
   INFO [f3fdd122] Running /usr/bin/env echo "Branch master (at bc823eeb75d94db7a01349830fb6e3951d5eb86c) deployed as release 20181104053931 by toughjjh" >> /home/deploy/textbook/revisions.log as deploy@deploy_server
  DEBUG [f3fdd122] Command: cd /home/deploy/textbook/releases && /usr/bin/env echo "Branch master (at bc823eeb75d94db7a01349830fb6e3951d5eb86c) deployed as release 20181104053931 by toughjjh" >> /home/deploy/textbook/revisions.log
   INFO [c687de81] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-11-04 14:44:50 +0900 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1f2e2d57] Running /usr/bin/env mkdir -p /tmp as deploy@deploy_server
+ DEBUG [1f2e2d57] Command: /usr/bin/env mkdir -p /tmp
+  INFO [9f2c58b8] Finished in 1.357 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-textbook-production-toughjjh.sh 0.0%
+  INFO Uploading /tmp/git-ssh-textbook-production-toughjjh.sh 100.0%
+  INFO [22970e37] Running /usr/bin/env chmod 700 /tmp/git-ssh-textbook-production-toughjjh.sh as deploy@deploy_server
+ DEBUG [22970e37] Command: /usr/bin/env chmod 700 /tmp/git-ssh-textbook-production-toughjjh.sh
+  INFO [6b866598] Finished in 0.295 seconds with exit status 0 (successful).
+  INFO [c9995aee] Running /usr/bin/env git ls-remote git@github.com:sleepinglion/simple_manage_program.git HEAD as deploy@deploy_server
+ DEBUG [c9995aee] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-textbook-production-toughjjh.sh" ; /usr/bin/env git ls-remote git@github.com:sleepinglion/simple_manage_program.git HEAD )
+ DEBUG [beb4b8eb] 	3035df4d76045d505eacd3fef1451cdf3f08481a	HEAD
+  INFO [beb4b8eb] Finished in 1.986 seconds with exit status 0 (successful).
+  INFO [e7044fcf] Running /usr/bin/env mkdir -p /home/deploy/textbook/shared /home/deploy/textbook/releases as deploy@deploy_server
+ DEBUG [e7044fcf] Command: /usr/bin/env mkdir -p /home/deploy/textbook/shared /home/deploy/textbook/releases
+  INFO [678884ce] Finished in 0.246 seconds with exit status 0 (successful).
+  INFO [23275a71] Running /usr/bin/env mkdir -p /home/deploy/textbook/shared/config as deploy@deploy_server
+ DEBUG [23275a71] Command: /usr/bin/env mkdir -p /home/deploy/textbook/shared/config
+  INFO [1a71f9f7] Finished in 0.300 seconds with exit status 0 (successful).
+ DEBUG [41239ff7] Running [ -f /home/deploy/textbook/shared/config/database.php ] as deploy@deploy_server
+ DEBUG [41239ff7] Command: [ -f /home/deploy/textbook/shared/config/database.php ]
+ DEBUG [904e092d] Finished in 0.283 seconds with exit status 0 (successful).
+ DEBUG [6cea2f81] Running [ -f /home/deploy/textbook/current/REVISION ] as deploy@deploy_server
+ DEBUG [6cea2f81] Command: [ -f /home/deploy/textbook/current/REVISION ]
+ DEBUG [fd703199] Finished in 0.278 seconds with exit status 0 (successful).
+ DEBUG [6de515cd] Running /usr/bin/env cat /home/deploy/textbook/current/REVISION 2>/dev/null as deploy@deploy_server
+ DEBUG [6de515cd] Command: /usr/bin/env cat /home/deploy/textbook/current/REVISION 2>/dev/null
+ DEBUG [445d320c] 	bc823eeb75d94db7a01349830fb6e3951d5eb86c
+ DEBUG [445d320c] Finished in 0.280 seconds with exit status 0 (successful).
+ DEBUG [763b079d] Running [ -f /home/deploy/textbook/repo/HEAD ] as deploy@deploy_server
+ DEBUG [763b079d] Command: [ -f /home/deploy/textbook/repo/HEAD ]
+ DEBUG [a7c62618] Finished in 0.264 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /home/deploy/textbook/repo
+ DEBUG [2da1ad83] Running if test ! -d /home/deploy/textbook/repo; then echo "Directory does not exist '/home/deploy/textbook/repo'" 1>&2; false; fi as deploy@deploy_server
+ DEBUG [2da1ad83] Command: if test ! -d /home/deploy/textbook/repo; then echo "Directory does not exist '/home/deploy/textbook/repo'" 1>&2; false; fi
+ DEBUG [ad0152af] Finished in 0.274 seconds with exit status 0 (successful).
+  INFO [e513d182] Running /usr/bin/env git remote set-url origin git@github.com:sleepinglion/simple_manage_program.git as deploy@deploy_server
+ DEBUG [e513d182] Command: cd /home/deploy/textbook/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-textbook-production-toughjjh.sh" ; /usr/bin/env git remote set-url origin git@github.com:sleepinglion/simple_manage_program.git )
+  INFO [3b625f9d] Finished in 0.276 seconds with exit status 0 (successful).
+  INFO [35fcc77c] Running /usr/bin/env git remote update --prune as deploy@deploy_server
+ DEBUG [35fcc77c] Command: cd /home/deploy/textbook/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-textbook-production-toughjjh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [2ad0d843] 	Fetching origin
+ DEBUG [2ad0d843] 	remote: Enumerating objects: 9, done.[K
+remote: Counting objects:  11% (1/9)   [Kremote: Counting objects:  22% (2/9)   [Kremote: Counting objects:  33% (3/9)   [Kremote: Counting objects:  44% (4/9)   [Kremote: Counting objects:  55% (5/9)   [Kremote: Counting objects:  66% (6/9)   [Kremote: Counting objects:  77% (7/9)   [Kremote: Counting objects:  88% (8/9)   [Kremote: Counting objects: 100% (9/9)   [Kremote: Counting objects: 100% (9/9), done.[K
+remote: Compressing objects: 100% (1/1)   [Kremote: Compressing objects: 100% (1/1), done.[K
+ DEBUG [2ad0d843] 	remote: Total 5 (delta 3), reused 5 (delta 3), pack-reused 0[K
+ DEBUG [2ad0d843] 	Unpacking objects:  20% (1/5)   
+ DEBUG [2ad0d843] 	Unpacking objects:  40% (2/5)   
+ DEBUG [2ad0d843] 	Unpacking objects:  60% (3/5)   
+ DEBUG [2ad0d843] 	Unpacking objects:  80% (4/5)   
+ DEBUG [2ad0d843] 	Unpacking objects: 100% (5/5)   Unpacking objects: 100% (5/5), done.
+ DEBUG [2ad0d843] 	From github.com:sleepinglion/simple_manage_program
+   bc823ee..3035df4  master     -> master
+  INFO [2ad0d843] Finished in 2.248 seconds with exit status 0 (successful).
+ DEBUG [ef38ddca] Running if test ! -d /home/deploy/textbook/repo; then echo "Directory does not exist '/home/deploy/textbook/repo'" 1>&2; false; fi as deploy@deploy_server
+ DEBUG [ef38ddca] Command: if test ! -d /home/deploy/textbook/repo; then echo "Directory does not exist '/home/deploy/textbook/repo'" 1>&2; false; fi
+ DEBUG [30442ba2] Finished in 0.209 seconds with exit status 0 (successful).
+  INFO [87b121da] Running /usr/bin/env mkdir -p /home/deploy/textbook/releases/20181104054455 as deploy@deploy_server
+ DEBUG [87b121da] Command: cd /home/deploy/textbook/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-textbook-production-toughjjh.sh" ; /usr/bin/env mkdir -p /home/deploy/textbook/releases/20181104054455 )
+  INFO [3ebccb73] Finished in 0.260 seconds with exit status 0 (successful).
+  INFO [5a1cd0a5] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/textbook/releases/20181104054455 as deploy@deploy_server
+ DEBUG [5a1cd0a5] Command: cd /home/deploy/textbook/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-textbook-production-toughjjh.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /home/deploy/textbook/releases/20181104054455 )
+  INFO [24314442] Finished in 0.260 seconds with exit status 0 (successful).
+ DEBUG [3be66aa4] Running if test ! -d /home/deploy/textbook/repo; then echo "Directory does not exist '/home/deploy/textbook/repo'" 1>&2; false; fi as deploy@deploy_server
+ DEBUG [3be66aa4] Command: if test ! -d /home/deploy/textbook/repo; then echo "Directory does not exist '/home/deploy/textbook/repo'" 1>&2; false; fi
+ DEBUG [d0431bda] Finished in 0.252 seconds with exit status 0 (successful).
+ DEBUG [b2494bc8] Running /usr/bin/env git rev-list --max-count=1 master as deploy@deploy_server
+ DEBUG [b2494bc8] Command: cd /home/deploy/textbook/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-textbook-production-toughjjh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [be008618] 	3035df4d76045d505eacd3fef1451cdf3f08481a
+ DEBUG [be008618] Finished in 0.259 seconds with exit status 0 (successful).
+ DEBUG [7f68cd87] Running if test ! -d /home/deploy/textbook/releases/20181104054455; then echo "Directory does not exist '/home/deploy/textbook/releases/20181104054455'" 1>&2; false; fi as deploy@deploy_server
+ DEBUG [7f68cd87] Command: if test ! -d /home/deploy/textbook/releases/20181104054455; then echo "Directory does not exist '/home/deploy/textbook/releases/20181104054455'" 1>&2; false; fi
+ DEBUG [564dda59] Finished in 0.251 seconds with exit status 0 (successful).
+  INFO [9262851d] Running /usr/bin/env echo "3035df4d76045d505eacd3fef1451cdf3f08481a" > REVISION as deploy@deploy_server
+ DEBUG [9262851d] Command: cd /home/deploy/textbook/releases/20181104054455 && /usr/bin/env echo "3035df4d76045d505eacd3fef1451cdf3f08481a" > REVISION
+  INFO [f9196ef0] Finished in 0.262 seconds with exit status 0 (successful).
+  INFO [6ffa8aa2] Running /usr/bin/env mkdir -p /home/deploy/textbook/releases/20181104054455/config as deploy@deploy_server
+ DEBUG [6ffa8aa2] Command: /usr/bin/env mkdir -p /home/deploy/textbook/releases/20181104054455/config
+  INFO [5b291397] Finished in 0.267 seconds with exit status 0 (successful).
+ DEBUG [ac700ab0] Running [ -L /home/deploy/textbook/releases/20181104054455/config/database.php ] as deploy@deploy_server
+ DEBUG [ac700ab0] Command: [ -L /home/deploy/textbook/releases/20181104054455/config/database.php ]
+ DEBUG [94bff4ed] Finished in 0.268 seconds with exit status 1 (failed).
+ DEBUG [73c94455] Running [ -f /home/deploy/textbook/releases/20181104054455/config/database.php ] as deploy@deploy_server
+ DEBUG [73c94455] Command: [ -f /home/deploy/textbook/releases/20181104054455/config/database.php ]
+ DEBUG [68e720a1] Finished in 0.276 seconds with exit status 0 (successful).
+  INFO [80e10dec] Running /usr/bin/env rm /home/deploy/textbook/releases/20181104054455/config/database.php as deploy@deploy_server
+ DEBUG [80e10dec] Command: /usr/bin/env rm /home/deploy/textbook/releases/20181104054455/config/database.php
+  INFO [b9614bf5] Finished in 0.268 seconds with exit status 0 (successful).
+  INFO [79da4812] Running /usr/bin/env ln -s /home/deploy/textbook/shared/config/database.php /home/deploy/textbook/releases/20181104054455/config/database.php as deploy@deploy_server
+ DEBUG [79da4812] Command: /usr/bin/env ln -s /home/deploy/textbook/shared/config/database.php /home/deploy/textbook/releases/20181104054455/config/database.php
+  INFO [a88aac0b] Finished in 0.257 seconds with exit status 0 (successful).
+  INFO [c46a402e] Running /usr/bin/env ln -s /home/deploy/textbook/releases/20181104054455 /home/deploy/textbook/releases/current as deploy@deploy_server
+ DEBUG [c46a402e] Command: /usr/bin/env ln -s /home/deploy/textbook/releases/20181104054455 /home/deploy/textbook/releases/current
+  INFO [c75ab140] Finished in 0.259 seconds with exit status 0 (successful).
+  INFO [2648b60d] Running /usr/bin/env mv /home/deploy/textbook/releases/current /home/deploy/textbook as deploy@deploy_server
+ DEBUG [2648b60d] Command: /usr/bin/env mv /home/deploy/textbook/releases/current /home/deploy/textbook
+  INFO [0fcac94f] Finished in 0.256 seconds with exit status 0 (successful).
+ DEBUG [f97178a8] Running /usr/bin/env ls -x /home/deploy/textbook/releases as deploy@deploy_server
+ DEBUG [f97178a8] Command: /usr/bin/env ls -x /home/deploy/textbook/releases
+ DEBUG [ec8666db] 	20181104050436	20181104053931	20181104054455
+ DEBUG [ec8666db] Finished in 0.248 seconds with exit status 0 (successful).
+ DEBUG [946acb31] Running if test ! -d /home/deploy/textbook/releases; then echo "Directory does not exist '/home/deploy/textbook/releases'" 1>&2; false; fi as deploy@deploy_server
+ DEBUG [946acb31] Command: if test ! -d /home/deploy/textbook/releases; then echo "Directory does not exist '/home/deploy/textbook/releases'" 1>&2; false; fi
+ DEBUG [fde3f7cb] Finished in 0.250 seconds with exit status 0 (successful).
+  INFO [a926d258] Running /usr/bin/env echo "Branch master (at 3035df4d76045d505eacd3fef1451cdf3f08481a) deployed as release 20181104054455 by toughjjh" >> /home/deploy/textbook/revisions.log as deploy@deploy_server
+ DEBUG [a926d258] Command: cd /home/deploy/textbook/releases && /usr/bin/env echo "Branch master (at 3035df4d76045d505eacd3fef1451cdf3f08481a) deployed as release 20181104054455 by toughjjh" >> /home/deploy/textbook/revisions.log
+  INFO [d747850d] Finished in 0.250 seconds with exit status 0 (successful).
