@@ -92,7 +92,7 @@ try {
                             <td><?php echo $value['manager'] ?></td>
                             <td><?php echo $value['phone'] ?></td>
                             <td><?php echo $value['date'] ?></td>
-                            <td><?php echo $value['reg_time'] ?></td>                                                                       
+                            <td><?php echo $value['created_at'] ?></td>                                                                       
                         </tr>                    
                         <?php endforeach ?>
                     </tbody>
