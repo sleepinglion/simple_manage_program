@@ -62,7 +62,7 @@
 				<label for="content">9. 기타 주문 사항 <font color=red>(마대자루 신청시 사전에 연락드리고 발송합니다.)</font></label>
 				<textarea name="content" id="content"  cols="50" rows="5" placeholder=""><?php if(!empty($content)): ?><?php echo $content['content'] ?><?php endif ?></textarea>
             </li>
-			<?php if(empty($content)): ?>            
+			<?php if(empty($content)): ?>        
 			<li> <label>* 개인 정보 활용 동의 <span style="font-size:12px; margin-top:5px; color:#888;">(업무연락 외 개인 정보를 사용하지 않습니다. <font color=red> 개인 정보 활용 동의</font>는 <font color=red><strong>예</strong></font>로 선택하셔야 접수가능합니다.)</span>
 				</label>
 				<div class="agree-wrap">
@@ -72,8 +72,9 @@
 					<label for="agree1" class="radio-agree">아니오</label>
 				</div>
 			</li>
-			<input type="submit" id="submit_button" value="입력하기" disabled class="btn_submit">
+			<input type="submit" id="submit_button" value="입력하기"  class="btn_submit">
 			<?php else: ?>
+			<input type="hidden" name="agree" id="agree0" value="예" required="required" checked>			
 			<input type="submit" id="submit_button" value="수정하기" class="btn_submit">
 			<?php endif ?>
 		</ul>
@@ -174,24 +175,15 @@ return [$return,$returnclass];
                 value = content.val();
             }
         });
-      }
+	  }
+	  
+	$('form').submit(function(){
+		if($("input[name=agree]:checked").val()=='아니오') {
+			alert('개인정보 활용 동의를 해주세요');
+			return false;
+		}
+	});
 });
-<?php if(empty($content)): ?>
-  $(function() {
-    $( "input[name=agree]" ).click(function(){
-		if($(this).val() == "아니오"){
-			$("#submit_button").attr("disabled",false);
-		}
-		if($(this).val() == "예"){
-			$("#submit_button").attr("disabled",false);
-		}else{
-			$("#submit_button").attr("disabled",true);
-			
-		}
-	})
-	
-  });
-<?php endif ?>
   </script>
 </body>
 </html>
