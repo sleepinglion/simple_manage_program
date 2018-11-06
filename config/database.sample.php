@@ -1,7 +1,7 @@
 <?php
-    $config['db']='leehoon';
-    $config['user']='leehoon';
-    $config['password']='leehoon123';
+    $config['db']='your dbname';
+    $config['user']='your db user';
+    $config['password']='your db password';
     $config['timezone']=New DateTimeZone('Asia/Seoul');
 
     error_reporting(E_ALL);

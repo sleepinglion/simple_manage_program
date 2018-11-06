@@ -52,17 +52,15 @@
 			<li>
 				<label for="vehicle">8. 차량진입 가능여부</label>
 				<div class="vehicle-wrap">
-					<input type="radio" name="vehicle" id="vehicle0" value="1톤"<?php if(!empty($content)): ?><?php if($content['vehicle']=='1톤'): ?> checked<?php endif ?><?php else: ?> checked<?php endif ?>>
-					<label for="vehicle0" class="vehicle-choice" style="margin-right:20px;">1톤</label>
-					<input type="radio" name="vehicle" id="vehicle1" value="3.5톤"<?php if(!empty($content)): ?><?php if($content['vehicle']=='3.5톤'): ?> checked<?php endif ?><?php endif ?>>
-					<label for="vehicle1" class="vehicle-choice" style="margin-right:20px;">3.5톤</label>
-					<input type="radio" name="vehicle" id="vehicle2" value="5톤"<?php if(!empty($content)): ?><?php if($content['vehicle']=='5톤'): ?> checked<?php endif ?><?php endif ?>>
-					<label for="vehicle2" class="vehicle-choice">5톤 집게 <span style="display: inline-block;font-weight: 300">(25인승 버스 크기와 비슷)</span></label>
+					<?php foreach($vehicle_list as $index=>$value): ?>
+					<input type="radio" name="vehicle" id="vehicle<?php echo $index ?>" value="<?php echo $value['id'] ?>"<?php if(!empty($content)): ?><?php if($content['vehicle_id']==$value['id']): ?> checked<?php endif ?><?php else: ?> checked<?php endif ?>>
+					<label for="vehicle<?php echo $index ?>" class="vehicle-choice" style="margin-right:20px;"><?php echo $value['title'] ?></label>
+					<?php endforeach ?>
 				</div>
             </li>
 			<li>
-				<label for="comment">9. 기타 주문 사항 <font color=red>(마대자루 신청시 사전에 연락드리고 발송합니다.)</font></label>
-				<textarea name="comment" id="comment"  cols="50" rows="5" placeholder=""><?php if(!empty($content)): ?><?php echo $content['comment'] ?><?php endif ?></textarea>
+				<label for="content">9. 기타 주문 사항 <font color=red>(마대자루 신청시 사전에 연락드리고 발송합니다.)</font></label>
+				<textarea name="content" id="content"  cols="50" rows="5" placeholder=""><?php if(!empty($content)): ?><?php echo $content['content'] ?><?php endif ?></textarea>
             </li>
 			<?php if(empty($content)): ?>            
 			<li> <label>* 개인 정보 활용 동의 <span style="font-size:12px; margin-top:5px; color:#888;">(업무연락 외 개인 정보를 사용하지 않습니다. <font color=red> 개인 정보 활용 동의</font>는 <font color=red><strong>예</strong></font>로 선택하셔야 접수가능합니다.)</span>
