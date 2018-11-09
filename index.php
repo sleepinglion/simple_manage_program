@@ -3,7 +3,6 @@
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
   <title>폐교과서 수거</title>
-  <link href="./assets/images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
   <link href="./assets/stylesheets/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
   <link href="./assets/stylesheets/index.css" media="all" type="text/css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
