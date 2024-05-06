@@ -1,7 +1,7 @@
 <?php 
 
 try {
-	session_start();
+    require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
     if(empty($_SESSION['admin'])) {
         if(isset($_POST['admin_id']) and isset($_POST['password'])) {
@@ -9,16 +9,15 @@ try {
                 $_SESSION['admin']=true;
             } else {
                 $_SESSION['message']='아이디 또는 비밀번호가 맞지않습니다';
-                include 'manage_login.php';
+                include __DIR__ . DIRECTORY_SEPARATOR . 'manage_login.php';
                 exit;
             }
         } else {
-            include 'manage_login.php';
+            include __DIR__ . DIRECTORY_SEPARATOR . 'manage_login.php';
             exit;
         }
     }
 
-    require 'config/database.php';
     require ('Pager/Pager.php');
 
     $stmt_select=$pdo->prepare('SELECT count(*) FROM requests');
@@ -40,10 +39,7 @@ try {
     
     $from = $from - 1;
 
-    $perPage = $pager_options['perPage'];    
-     
-
-             
+    $perPage = $pager_options['perPage'];
 
     $stmt_select=$pdo->prepare('SELECT cd.*,date(cd.created_at) as created_at FROM requests as cd ORDER BY id DESC LIMIT '.$from.' , '.$perPage);
     $stmt_select->execute();
@@ -51,68 +47,55 @@ try {
 
 ?>
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="<?php echo $language ?>">
 <head>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <title>폐교과서 수거</title>
-  <link href="./assets/images/favicon.ico" type="image/x-icon" rel="shortcut icon"/>
-  <link href="./assets/stylesheets/bootstrap.min.css" media="all" type="text/css" rel="stylesheet" />
-  <link href="./assets/stylesheets/index.css" media="all" type="text/css" rel="stylesheet" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Sleeping-Lion" />
-  	<!--[if IE]>
-  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  	<![endif]-->
-  </head>
+	<meta charset="utf-8">
+	<title><?php echo _('Simple Manage') ?></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+	<meta name="author" content="Sleeping-Lion">
+	<link href="<?php echo IMAGE_DIRECTORY?>favicon.ico" type="image/x-icon" rel="shortcut icon">
+	<link href="<?php echo BOOTSTRAP_CSS_DIRECTORY?>bootstrap.min.css" media="all" type="text/css" rel="stylesheet">
+	<link href="<?php echo CSS_DIRECTORY?>index.css" media="all" type="text/css" rel="stylesheet">
+</head>
   <body>
   	<!-- header -->
-    <div class="container">        
+    <div class="container">
         <div class="row">
             <div class="col-12">
                 <table class="table table-striped table-hover">
                     <thead class="thead-default">
                         <tr>
-                            <th>지역명</th>
-                            <th>학교명</th>
-                            <th>학생수</th>
-                            <th>주소</th>
-                            <th>담당자</th>
-                            <th>전화번호</th>
-                            <th>수거요청일</th>
-                            <th>등록일</th>
+                            <th><?php echo _('School Name') ?></th>
+                            <th><?php echo _('Address') ?></th>
+                            <th><?php echo _('Manager') ?></th>
+                            <th><?php echo _('Phone') ?></th>
+                            <th><?php echo _('Date') ?></th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach($list as $value): ?>
                         <tr>
-                            <td><?php echo $value['area_name'] ?></td>
                             <td><?php echo $value['school_name'] ?></td>
-                            <td><?php echo $value['student'] ?></td>
-                            <td><?php echo $value['address'] ?></td>                        
+                            <td><?php echo $value['address'] ?></td>
                             <td><?php echo $value['manager'] ?></td>
                             <td><?php echo $value['phone'] ?></td>
                             <td><?php echo $value['date'] ?></td>
-                            <td><?php echo $value['created_at'] ?></td>                                                                       
-                        </tr>                    
+                        </tr>
                         <?php endforeach ?>
                     </tbody>
                 </table>
                 <div class="text-center">
                 <?php echo $pager->links; ?>
-                </div>                
+                </div>
             </div>
         </div>
     </div>
-    
     </body>
 </html>
 
-
-
-
 <?php
 } catch (Exception $e) {
-    echo $e->getMessage();
+    include __DIR__ . DIRECTORY_SEPARATOR . 'error.php';
 }
 
 ?>

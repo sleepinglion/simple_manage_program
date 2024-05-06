@@ -1,0 +1,302 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sl_ftp\n"
+"POT-Creation-Date: 2024-05-06 19:30+0900\n"
+"PO-Revision-Date: 2024-05-06 19:31+0900\n"
+"Last-Translator: \n"
+"Language-Team: sleepinglion <admin@sleepinglion.pe.kr>\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ../../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: config\n"
+"X-Poedit-SearchPath-1: public\n"
+
+#: config/config.php:41
+msgid "Not Available Gettext Extensions"
+msgstr "Not Available Gettext Extensions"
+
+#: public/error.php:5 public/form.php:5 public/index.php:12
+#: public/manage.php:53 public/manage_login.php:5 public/manage_show.php:53
+#: public/search.php:44
+msgid "Simple Manage"
+msgstr "Simple Manage"
+
+#: public/error.php:18
+msgid "Error"
+msgstr "Error"
+
+#: public/error.php:22
+msgid "Sorry Error"
+msgstr "Sorry, Error Occur"
+
+#: public/error.php:24
+msgid "Confirm"
+msgstr "Confirm"
+
+#: public/index.php:25
+msgid "Select Request OR Search"
+msgstr "Select Request OR Search"
+
+#: public/index.php:29
+msgid "Request"
+msgstr "Request"
+
+#: public/index.php:32
+msgid "Search, Edit"
+msgstr "Search, Edit"
+
+#: public/insert.php:53
+msgid "Request Completed"
+msgstr "Request Completed"
+
+#: public/manage.php:68 public/search.php:58
+msgid "School Name"
+msgstr "School Name"
+
+#: public/manage.php:69
+msgid "Address"
+msgstr "Address"
+
+#: public/manage.php:70 public/search.php:62
+msgid "Manager"
+msgstr "Manager"
+
+#: public/manage.php:71 public/search.php:66
+msgid "Phone"
+msgstr "Phone"
+
+#: public/manage.php:72
+msgid "Date"
+msgstr "Date"
+
+#: public/manage_login.php:20
+msgid "User ID"
+msgstr ""
+
+#: public/manage_login.php:24
+msgid "Password"
+msgstr "Password"
+
+#: public/manage_login.php:28
+msgid "Login"
+msgstr "Login"
+
+#: public/search.php:70
+msgid "Search"
+msgstr "Search"
+
+#, php-format
+#~ msgid "Not exists TMP_DIR(%s)"
+#~ msgstr "Not exists TMP_DIR(%s)"
+
+#, php-format
+#~ msgid "Not Writable TMP_DIR(%s)"
+#~ msgstr "Not Writable TMP_DIR(%s)"
+
+#~ msgid "Byte"
+#~ msgstr "Byte"
+
+#~ msgid "Kilo Byte"
+#~ msgstr "Kilo Byte"
+
+#~ msgid "Mega Byte"
+#~ msgstr "Mega Byte"
+
+#~ msgid "Giga Byte"
+#~ msgstr "Giga Byte"
+
+#~ msgid "Tera Byte"
+#~ msgstr "Tera Byte"
+
+#~ msgid "SL FTP"
+#~ msgstr "SL FTP"
+
+#~ msgid "Connect Info"
+#~ msgstr "Connect Info"
+
+#~ msgid "host"
+#~ msgstr "host"
+
+#~ msgid "port"
+#~ msgstr "port"
+
+#~ msgid "username"
+#~ msgstr "username"
+
+#~ msgid "userpass"
+#~ msgstr "userpass"
+
+#~ msgid "sftp"
+#~ msgstr "Secure FTP(SFTP)"
+
+#~ msgid "pasv mode"
+#~ msgstr "PASSIVE mode"
+
+#~ msgid "connect"
+#~ msgstr "Connect"
+
+#~ msgid "Change Language"
+#~ msgstr "Change Language"
+
+#~ msgid "File Names Not Submit"
+#~ msgstr "File Names Not Submit"
+
+#~ msgid "File Not Exists"
+#~ msgstr "File Not Exists"
+
+#~ msgid "Files"
+#~ msgstr "Files"
+
+#~ msgid "Refresh"
+#~ msgstr "Refresh"
+
+#~ msgid "Upload"
+#~ msgstr "Upload"
+
+#~ msgid "New Folder"
+#~ msgstr "New Folder"
+
+#~ msgid "Download"
+#~ msgstr "Download"
+
+#~ msgid "Rename"
+#~ msgstr "Rename"
+
+#~ msgid "Delete"
+#~ msgstr "Delete"
+
+#~ msgid "Logout"
+#~ msgstr "Logout"
+
+#~ msgid "Current Directory"
+#~ msgstr "Current Directory"
+
+#~ msgid "Visited Directory"
+#~ msgstr "Visited Directory"
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "Size"
+#~ msgstr "Size"
+
+#~ msgid "Go To Parent Directory"
+#~ msgstr "Go To Parent Directory"
+
+#~ msgid "Direcotry"
+#~ msgstr "Direcotry"
+
+#~ msgid "File"
+#~ msgstr "File"
+
+#~ msgid "Free Space"
+#~ msgstr "Free Space"
+
+#~ msgid "All Space"
+#~ msgstr "All Space"
+
+#~ msgid "Temp Upload Folder Free Space"
+#~ msgstr "Temp Upload Folder Free Space"
+
+#~ msgid "select_download_file"
+#~ msgstr "Select Download File"
+
+#~ msgid "select_delete_file"
+#~ msgstr "Select Delete File"
+
+#~ msgid "notice_cascade_delete"
+#~ msgstr "directory and file  cascade delete, continue?"
+
+#~ msgid "notice_delete"
+#~ msgstr "Are you sure?"
+
+#~ msgid "delete_success"
+#~ msgstr "successfully deleted"
+
+#~ msgid "delete_fail"
+#~ msgstr "delete fail"
+
+#~ msgid "Change"
+#~ msgstr "Change"
+
+#~ msgid "Folder Name Not Submit"
+#~ msgstr "Folder Name Not Submit"
+
+#, php-format
+#~ msgid "There was a problem while creating %s"
+#~ msgstr "There was a problem while creating %s"
+
+#, php-format
+#~ msgid "Successfully Make %s File"
+#~ msgstr "Successfully Make %s File"
+
+#~ msgid "Current Folder Not Submit"
+#~ msgstr "Current Folder Not Submit"
+
+#, php-format
+#~ msgid "Unable To Make %s Directory"
+#~ msgstr "Unable To Make %s Directory"
+
+#~ msgid "Upload File Move Fail"
+#~ msgstr "Upload File Move Fail"
+
+#~ msgid "Your File"
+#~ msgstr "Your File"
+
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#, php-format
+#~ msgid "Upload Files %s"
+#~ msgstr "Upload Files %s"
+
+#~ msgid "Drag and Drop Your File On Drop Area"
+#~ msgstr "Drag and Drop Your File On Drop Area"
+
+#, php-format
+#~ msgid "Files Size under %s AND File Count under %s"
+#~ msgstr "Files Size under %s AND File Count under %s"
+
+#~ msgid "Drop Area"
+#~ msgstr "Drop Area"
+
+#~ msgid "Files Left"
+#~ msgstr "Files Left"
+
+#~ msgid "Result"
+#~ msgstr "Result"
+
+#~ msgid "Unable To Use Drag and Drop"
+#~ msgstr "Unable To Use Drag and Drop(click here)"
+
+#~ msgid "Time"
+#~ msgstr "Time"
+
+#~ msgid "submit"
+#~ msgstr "Submit"
+
+#~ msgid "Site Title"
+#~ msgstr "Sleeping-Lion Web FTP Client"
+
+#~ msgid "english"
+#~ msgstr "English"
+
+#~ msgid "chineses"
+#~ msgstr "Chineses"
+
+#~ msgid "korean"
+#~ msgstr "Korean"
+
+#~ msgid "japaneses"
+#~ msgstr "Japaneses"
+
+#~ msgid "Drag and Drop Your File On Drop Area(Files Size under %s)"
+#~ msgstr "Drag and Drop Your File On Drop Area(Files Size under %s)"
+
+#~ msgid "Directory"
+#~ msgstr "디렉토리"

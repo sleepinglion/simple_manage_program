@@ -1,7 +1,7 @@
 <?php
-    $config['db']='your dbname';
-    $config['user']='your db user';
-    $config['password']='your db password';
+    $config['db']='simple_manage';
+    $config['user']='simple_manage';
+    $config['password']='simple_manage1!' ;
     $config['timezone']=New DateTimeZone('Asia/Seoul');
 
     error_reporting(E_ALL);

@@ -1,0 +1,32 @@
+{
+    "name": "jedaeroweb/simple_manager",
+    "description": "simple form application",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jedaeroweb",
+            "email": "admin@jedaeroweb.co.kr",
+            "homepage": "https://www.jedaeroweb.co.kr",
+            "role": "Developer"
+        }
+     ],
+    "require": { 
+        "php": ">=7.2",
+        "monolog/monolog": "1.2.*",
+        "twbs/bootstrap": "^5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "suggest": {
+        "markstory/asset_compress": "An asset compression plugin which provides file concatenation and a flexible filter system for preprocessing and minification.",
+        "phpunit/phpunit": "Allows automated tests to be run without system-wide install."
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "rm -rf public/bootstrap",
+            "cp -R vendor/twbs/bootstrap/dist public/bootstrap"
+        ]
+    }
+}

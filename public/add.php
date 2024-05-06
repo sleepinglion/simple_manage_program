@@ -1,9 +1,7 @@
 <?php 
 
 try {
-	session_start();
-
-	require 'config/database.php';
+    require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
 	
 
 	$stmt_vehicle_select=$pdo->prepare('SELECT * FROM vehicles WHERE enable=1');
@@ -14,9 +12,7 @@ try {
     $stmt_select->execute();
 	$list=$stmt_select->fetchAll(PDO::FETCH_ASSOC);
 
-	include 'form.php';
+    include __DIR__ . DIRECTORY_SEPARATOR . 'form.php';
 } catch (Exception $e) {
-	 echo $e->getMessage();
+    include __DIR__ . DIRECTORY_SEPARATOR . 'error.php';
 }
-
-?>

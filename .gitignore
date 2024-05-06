@@ -1,2 +1,10 @@
+.project
+.settings
+public/tmp
+public/bootstrap
+log
+lib
+vendor
+config/config.php
 config/database.php
-logs/*
+composer.lock

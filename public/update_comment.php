@@ -2,7 +2,7 @@
 <?php
 
 try {
-    require 'config/database.php';
+    require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
     $stmt_select=$pdo->prepare('SELECT * FROM requests WHERE length(comment)>2 AND (comment is not null OR comment!="")');
     $stmt_select->execute();
@@ -11,10 +11,10 @@ try {
     foreach($list as $value) {
         $stmt_insert=$pdo->prepare('INSERT INTO request_contents(request_id,content) VALUES(:request_id,:content)');
         $stmt_insert->bindParam(':request_id',$value['id'],PDO::PARAM_INT);
-        $stmt_insert->bindParam(':content',$value['comment'],PDO::PARAM_STR);        
+        $stmt_insert->bindParam(':content',$value['comment'],PDO::PARAM_STR);
         $stmt_insert->execute();
     }
 
 } catch (Exception $e) {
-    echo $e->getMessage();
+    include __DIR__ . DIRECTORY_SEPARATOR . 'error.php';
 }

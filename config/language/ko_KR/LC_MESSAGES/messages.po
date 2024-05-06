@@ -1,0 +1,330 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: sl_ftp\n"
+"POT-Creation-Date: 2024-05-06 19:27+0900\n"
+"PO-Revision-Date: 2024-05-06 19:29+0900\n"
+"Last-Translator: \n"
+"Language-Team: sleepinglion <admin@sleepinglion.pe.kr>\n"
+"Language: ko_KR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.2\n"
+"X-Poedit-Basepath: ../../../..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: config\n"
+"X-Poedit-SearchPath-1: public\n"
+
+#: config/config.php:41
+msgid "Not Available Gettext Extensions"
+msgstr "PHP gettext 확장이 설치,설정되지 않았습니다"
+
+#: public/error.php:5 public/form.php:5 public/index.php:12
+#: public/manage.php:53 public/manage_login.php:5 public/manage_show.php:53
+#: public/search.php:44
+msgid "Simple Manage"
+msgstr "신청관리 폼"
+
+#: public/error.php:18
+msgid "Error"
+msgstr "애러"
+
+#: public/error.php:22
+msgid "Sorry Error"
+msgstr "죄송합니다. 애러가 발생하여 더 이상 진행할수 없습니다"
+
+#: public/error.php:24
+msgid "Confirm"
+msgstr "확인"
+
+#: public/index.php:25
+msgid "Select Request OR Search"
+msgstr "요청이나 검색을 선택하세요"
+
+#: public/index.php:29
+msgid "Request"
+msgstr "요청"
+
+#: public/index.php:32
+msgid "Search, Edit"
+msgstr "검색, 수정"
+
+#: public/insert.php:53
+msgid "Request Completed"
+msgstr "요청완료"
+
+#: public/manage.php:68 public/search.php:58
+msgid "School Name"
+msgstr "학교명"
+
+#: public/manage.php:69
+msgid "Address"
+msgstr "주소"
+
+#: public/manage.php:70 public/search.php:62
+msgid "Manager"
+msgstr "관리"
+
+#: public/manage.php:71 public/search.php:66
+msgid "Phone"
+msgstr "전화"
+
+#: public/manage.php:72
+msgid "Date"
+msgstr "날짜"
+
+#: public/manage_login.php:20
+msgid "User ID"
+msgstr "사용자명"
+
+#: public/manage_login.php:24
+msgid "Password"
+msgstr "비밀번호"
+
+#: public/manage_login.php:28
+msgid "Login"
+msgstr "로그인"
+
+#: public/search.php:70
+msgid "Search"
+msgstr "검색"
+
+#~ msgid "SL FTP"
+#~ msgstr "잠자는사자 FTP"
+
+#, php-format
+#~ msgid "Not exists TMP_DIR(%s)"
+#~ msgstr "임시디렉토리(%s)가 존재하지 않습니다."
+
+#, php-format
+#~ msgid "Not Writable TMP_DIR(%s)"
+#~ msgstr "임시디렉토리(%s)에 쓰기를 할 수가 없습니다."
+
+#~ msgid "Byte"
+#~ msgstr "바이트"
+
+#~ msgid "Kilo Byte"
+#~ msgstr "킬로바이트"
+
+#~ msgid "Mega Byte"
+#~ msgstr "메가바이트"
+
+#~ msgid "Giga Byte"
+#~ msgstr "기가바이트"
+
+#~ msgid "Tera Byte"
+#~ msgstr "테라바이트"
+
+#~ msgid "Connect Info"
+#~ msgstr "접속정보"
+
+#~ msgid "host"
+#~ msgstr "접속주소"
+
+#~ msgid "port"
+#~ msgstr "포트"
+
+#~ msgid "username"
+#~ msgstr "사용자명"
+
+#~ msgid "userpass"
+#~ msgstr "비밀번호"
+
+#~ msgid "sftp"
+#~ msgstr "보안FTP(SFTP)"
+
+#~ msgid "pasv mode"
+#~ msgstr "PASSIVE mode"
+
+#~ msgid "connect"
+#~ msgstr "FTP 접속하기"
+
+#~ msgid "Change Language"
+#~ msgstr "언어바꾸기"
+
+#~ msgid "File Names Not Submit"
+#~ msgstr "파일이름들이 제출되지 않았습니다."
+
+#~ msgid "Delete Confirm"
+#~ msgstr "삭제 확인"
+
+#, php-format
+#~ msgid "Are You Sure Delete %s"
+#~ msgstr "%s를 정말로 삭제합니까?"
+
+#~ msgid "Cancel"
+#~ msgstr "취소"
+
+#~ msgid "Delete"
+#~ msgstr "삭제"
+
+#~ msgid "File Not Exists"
+#~ msgstr "파일이 없습니다."
+
+#~ msgid "Files"
+#~ msgstr "개의 파일들"
+
+#~ msgid "Current Directory"
+#~ msgstr "현재 디렉토리"
+
+#~ msgid "Visited Directory"
+#~ msgstr "방문한 디렉토리"
+
+#~ msgid "Logout"
+#~ msgstr "나가기"
+
+#~ msgid "Name"
+#~ msgstr "이름"
+
+#~ msgid "Size"
+#~ msgstr "크기"
+
+#~ msgid "Time"
+#~ msgstr "시간"
+
+#~ msgid "Go To Parent Directory"
+#~ msgstr "상위디렉토리로 가기"
+
+#~ msgid "Direcotry"
+#~ msgstr "디렉토리"
+
+#~ msgid "File"
+#~ msgstr "파일"
+
+#~ msgid "Rename"
+#~ msgstr "이름바꾸기"
+
+#~ msgid "No File"
+#~ msgstr "파일없음"
+
+#~ msgid "Selected Do"
+#~ msgstr "선택한것"
+
+#~ msgid "Download"
+#~ msgstr "다운로드"
+
+#~ msgid "Upload"
+#~ msgstr "올리기"
+
+#~ msgid "New Folder"
+#~ msgstr "새 폴더"
+
+#~ msgid "Free Space"
+#~ msgstr "남은용량"
+
+#~ msgid "All Space"
+#~ msgstr "전체용량"
+
+#~ msgid "Temp Upload Folder Free Space"
+#~ msgstr "임시업로드 남은용량"
+
+#~ msgid "select_download_file"
+#~ msgstr "다운로드 받을 파일을 선택해주세요"
+
+#~ msgid "select_delete_file"
+#~ msgstr "삭제할 파일을 선택해주세요"
+
+#~ msgid "notice_cascade_delete"
+#~ msgstr "을(를) 삭제할 경우 하위 폴더,파일이 모두 삭제됩니다, 그래도 진행합니까?"
+
+#~ msgid "notice_delete"
+#~ msgstr "정말로 삭제합니까?"
+
+#~ msgid "delete_success"
+#~ msgstr "이(가) 성공적으로 삭제되었습니다."
+
+#~ msgid "delete_fail"
+#~ msgstr "을(를) 삭제하는데 실패하였습니다."
+
+#~ msgid "Change"
+#~ msgstr "바꾸기"
+
+#~ msgid "Folder Name Not Submit"
+#~ msgstr "폴더명이 체출되지 않았습니다."
+
+#, php-format
+#~ msgid "There was a problem while creating %s"
+#~ msgstr "%s를 생성하는데 문제가 있습니다."
+
+#, php-format
+#~ msgid "Successfully Make %s File"
+#~ msgstr "%s가 성공적으로 만들어졌습니다."
+
+#~ msgid "Current Folder Not Submit"
+#~ msgstr "현재 폴더가 제출되지 않았습니다."
+
+#, php-format
+#~ msgid "Unable To Make %s Directory"
+#~ msgstr "%s 디렉토리를 생성할수 없습니다.(경로및 권한을 확인해보세요)"
+
+#~ msgid "Upload File Move Fail"
+#~ msgstr "업로드 파일을 이동할수 없습니다.(경로및 권한을 확인해보세요)"
+
+#~ msgid "Your File"
+#~ msgstr "올린 파일"
+
+#~ msgid "Type"
+#~ msgstr "유형"
+
+#, php-format
+#~ msgid "Upload Files %s"
+#~ msgstr "%s에 파일 올리기"
+
+#~ msgid "Drag and Drop Your File On Drop Area"
+#~ msgstr "올릴 파일을 끌어서 떨구는곳에 떨구세요"
+
+#, php-format
+#~ msgid "Files Size under %s AND File Count under %s"
+#~ msgstr "파일용량 %s이하, 파일 갯수 %s이하여야 함"
+
+#~ msgid "Drop Area"
+#~ msgstr "떨구는 곳"
+
+#~ msgid "Files Left"
+#~ msgstr "남은 파일"
+
+#~ msgid "Result"
+#~ msgstr "결과"
+
+#~ msgid "Unable To Use Drag and Drop"
+#~ msgstr "끌어서 떨구기가 불가능한 경우(여기를 눌러)"
+
+#~ msgid "Refresh"
+#~ msgstr "새로고침"
+
+#~ msgid "submit"
+#~ msgstr "변경"
+
+#~ msgid "SL FTP client"
+#~ msgstr "sleepinglion FTP client"
+
+#~ msgid "Site Title"
+#~ msgstr "잠자는사자 FTP 접속 프로그램"
+
+#~ msgid "english"
+#~ msgstr "영어"
+
+#~ msgid "chineses"
+#~ msgstr "중국어"
+
+#~ msgid "korean"
+#~ msgstr "한국어"
+
+#~ msgid "japaneses"
+#~ msgstr "일본어"
+
+#~ msgid "Go Parent Directory"
+#~ msgstr "상위폴더로 가기"
+
+#~ msgid "Parent Directory"
+#~ msgstr "상위폴더로 가기"
+
+#~ msgid "Drag and Drop Your File On Drop Area(Files Size under %s)"
+#~ msgstr "떨구는 곳에 파일을 끌어서 떨구세여(전체 파일용량 %s이하)"
+
+#~ msgid "Directory Not Submit"
+#~ msgstr "현재 "
+
+#~ msgid "Directory"
+#~ msgstr "디렉토리"

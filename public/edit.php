@@ -1,16 +1,14 @@
 <?php 
 
 try {
-	session_start();
-
-    require 'config/database.php';
+    require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
 	if(empty($_SESSION['id'])) {
 ?>
         <script>
-        alert ("먼저 해당되는 정보를 입력해주세요");
+        alert ("<?php echo _('') ?>");
         location.href='search.php';
-        </script>        
+        </script>
 <?php
         exit;
     }
@@ -20,13 +18,11 @@ try {
     $list=$stmt_select->fetchAll(PDO::FETCH_ASSOC);
     
     $stmt_select_content=$pdo->prepare('SELECT * FROM requests WHERE id=:id');
-    $stmt_select_content->bindParam(':id',$_SESSION['id'],PDO::PARAM_INT);         
+    $stmt_select_content->bindParam(':id',$_SESSION['id'],PDO::PARAM_INT);
     $stmt_select_content->execute();
     $content=$stmt_select_content->fetch(PDO::FETCH_ASSOC);
     
-    include 'form.php';  
+    include __DIR__ . DIRECTORY_SEPARATOR . 'form.php';
 } catch (Exception $e) {
-	 echo $e->getMessage();
+    include __DIR__ . DIRECTORY_SEPARATOR . 'error.php';
 }
-
-?>

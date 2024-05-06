@@ -1,8 +1,10 @@
-
 <?php
 
+namespace SleepingLion\SimpleManagerForm;
+
 try {
-    require 'config/database.php';
+    require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+    require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'config.php';
 
     $student=filter_var($_POST['student'],FILTER_VALIDATE_INT);
     if(empty($student)) {
@@ -44,16 +46,16 @@ try {
     $sendmail=false;
 
     if($mail_send) {
-        include 'sendmail.php';
+        include __DIR__ . DIRECTORY_SEPARATOR . 'sendmail.php';
     }
 ?>
 <script>
-alert ("접수되었습니다");
+alert ("<?php echo _('Request Completed') ?>");
 location.href='index.php';
 </script>
     
 <?php
 } catch (Exception $e) {
-    echo $e->getMessage();
+    include __DIR__ . DIRECTORY_SEPARATOR . 'error.php';
 }
 
